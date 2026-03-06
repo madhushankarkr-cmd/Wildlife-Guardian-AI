@@ -1,0 +1,7 @@
+ultralytics
+cohere
+fastapi
+uvicorn
+python-dotenv
+requests
+python-multipart
