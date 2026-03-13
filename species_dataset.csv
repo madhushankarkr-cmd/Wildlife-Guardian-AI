@@ -1,0 +1,11 @@
+Animal,Scientific Name,IUCN Status,Base Risk,Habitat,Main Threat
+Tiger,Panthera tigris,Endangered,85,Forest,Poaching
+Asian Elephant,Elephas maximus,Endangered,80,Forest/Grassland,Habitat Loss
+Black Rhinoceros,Diceros bicornis,Critically Endangered,95,Savanna,Poaching
+Polar Bear,Ursus maritimus,Vulnerable,70,Arctic,Climate Change
+Giant Panda,Ailuropoda melanoleuca,Vulnerable,65,Mountain Forest,Habitat Loss
+Snow Leopard,Panthera uncia,Vulnerable,72,Mountains,Poaching
+Orangutan,Pongo pygmaeus,Critically Endangered,92,Rainforest,Deforestation
+Blue Whale,Balaenoptera musculus,Endangered,85,Ocean,Ship Strikes
+Sea Turtle,Cheloniidae,Critically Endangered,90,Ocean,Plastic Pollution
+Pangolin,Manis,Critically Endangered,93,Forest,Illegal Wildlife Trade
