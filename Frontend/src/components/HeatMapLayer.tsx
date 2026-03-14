@@ -1,9 +1,6 @@
 "use client";
 
-<<<<<<< HEAD
 import { MapContainer, TileLayer } from "react-leaflet";
-=======
->>>>>>> 2d54265 (feat: integrated Roboflow detection and Cohere intelligence reports)
 import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet.heat";
