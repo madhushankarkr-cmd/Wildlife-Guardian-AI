@@ -7,6 +7,18 @@ from scripts.detector import get_detections
 from scripts.risk_engine import calculate_wildlife_risk
 from scripts.cohere_logic import get_explanation
 from utils.weather_service import get_environmental_factor
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+# Add this to allow the Frontend to talk to your AI
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # In production, you'd specify your URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/analyze-wildlife")
 async def analyze_wildlife(lat: float, lon: float, file: UploadFile = File(...)):
@@ -21,7 +33,13 @@ async def analyze_wildlife(lat: float, lon: float, file: UploadFile = File(...))
         raw_detections = get_detections(temp_path)
         print(f"Raw Detections from Roboflow: {raw_detections}")
 
-        id_map = {"2": "rhino", "1": "elephant", "0": "buffalo"}
+        id_map = {"0": "buffalo", 
+            "1": "elephant", 
+            "2": "rhino",   
+            "3": "zebra"
+        }
+        
+
         detections = [id_map.get(d, d) for d in raw_detections]
         
         primary_animal = detections[0] if detections else "Unknown Species"

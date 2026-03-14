@@ -7,3 +7,8 @@ venv/
 .venv/
 .vscode/
 .idea/
+
+node_modules
+.next
+.env
+*.local
