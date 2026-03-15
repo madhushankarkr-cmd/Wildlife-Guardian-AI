@@ -7,71 +7,21 @@ export default function DetectionPage() {
   const [species, setSpecies] = useState("");
   const [risk, setRisk] = useState("");
   const [location, setLocation] = useState("");
-<<<<<<< HEAD
-
-  useEffect(() => {
-    setImage(localStorage.getItem("uploadedImage"));
-    setSpecies(localStorage.getItem("species") || "");
-    setRisk(localStorage.getItem("risk") || "");
-    setLocation(localStorage.getItem("location") || "");
-=======
   const [explanation, setExplanation] = useState("");
   const [markerColor, setMarkerColor] = useState("green");
 
   useEffect(() => {
-    // Retrieve all data saved by the Upload page
+    // Retrieve all data saved by the Upload page from LocalStorage
     setImage(localStorage.getItem("uploadedImage"));
     setSpecies(localStorage.getItem("species") || "Unknown");
     setRisk(localStorage.getItem("risk") || "0");
-    setLocation(localStorage.getItem("location") || "Not Specified");
+    setLocation(localStorage.getItem("location") || "Lat: 27.17, Lon: 78.08");
     setExplanation(localStorage.getItem("explanation") || "");
     setMarkerColor(localStorage.getItem("markerColor") || "green");
->>>>>>> 2d54265 (feat: integrated Roboflow detection and Cohere intelligence reports)
   }, []);
 
   return (
-    <div className="space-y-16">
-<<<<<<< HEAD
-
-      <section className="rounded-3xl bg-gradient-to-r from-green-900 via-green-800 to-cyan-700 text-white py-16 px-10 text-center">
-        <h1 className="text-5xl font-extrabold">
-          AI Detection Results
-        </h1>
-      </section>
-
-      <section className="grid lg:grid-cols-2 gap-12">
-
-        <div className="bg-white p-8 rounded-3xl shadow-xl">
-          <h2 className="text-2xl font-bold text-green-800 mb-6">
-            Uploaded Image
-          </h2>
-          {image && (
-            <img
-              src={image}
-              alt="Uploaded"
-              className="rounded-2xl w-full object-cover"
-            />
-          )}
-        </div>
-
-        <div className="bg-gradient-to-br from-green-50 to-cyan-50 p-8 rounded-3xl shadow-xl">
-          <h2 className="text-2xl font-bold text-green-800 mb-8">
-            Detection Details
-          </h2>
-
-          <div className="space-y-6 text-lg">
-            <p><strong>Species:</strong> {species}</p>
-            <p><strong>Risk:</strong> {risk}</p>
-            <p><strong>Location:</strong> {location}</p>
-            <p><strong>AI Confidence:</strong> 92%</p>
-
-            <div className="bg-green-700 text-white p-6 rounded-xl mt-8">
-              AI suggests increased ranger patrol in this zone.
-            </div>
-          </div>
-        </div>
-
-=======
+    <div className="space-y-16 pb-20">
       {/* HEADER SECTION */}
       <section className="rounded-3xl bg-gradient-to-r from-green-900 via-green-800 to-cyan-700 text-white py-16 px-10 text-center shadow-2xl">
         <h1 className="text-5xl font-extrabold tracking-tight">
@@ -82,13 +32,15 @@ export default function DetectionPage() {
         </p>
       </section>
 
+      {/* MAIN CONTENT GRID */}
       <section className="grid lg:grid-cols-2 gap-12">
+        
         {/* LEFT SIDE: UPLOADED IMAGE */}
         <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
           <h2 className="text-2xl font-bold text-green-800 mb-6 flex items-center">
             <span className="mr-2">📸</span> Uploaded Image
           </h2>
-          <div className="overflow-hidden rounded-2xl border-4 border-gray-50">
+          <div className="overflow-hidden rounded-2xl border-4 border-gray-50 bg-gray-50">
             {image ? (
               <img
                 src={image}
@@ -96,8 +48,8 @@ export default function DetectionPage() {
                 className="w-full h-auto object-cover transform hover:scale-105 transition duration-500"
               />
             ) : (
-              <div className="h-64 bg-gray-100 flex items-center justify-center text-gray-400">
-                No image found
+              <div className="h-64 flex items-center justify-center text-gray-400 italic">
+                No image found in local storage.
               </div>
             )}
           </div>
@@ -105,6 +57,7 @@ export default function DetectionPage() {
 
         {/* RIGHT SIDE: DETECTION METRICS & AI REPORT */}
         <div className="space-y-8">
+          
           {/* STATS CARD */}
           <div className="bg-gradient-to-br from-green-50 to-cyan-50 p-8 rounded-3xl shadow-xl border border-white">
             <h2 className="text-2xl font-bold text-green-800 mb-8 flex items-center">
@@ -141,7 +94,7 @@ export default function DetectionPage() {
             </h3>
             <hr className="mb-6 border-gray-100" />
             <div className="whitespace-pre-wrap text-base text-gray-700 leading-relaxed max-h-[400px] overflow-y-auto pr-4 custom-scrollbar italic">
-              {explanation || "Generating deep-reasoning report from Cohere AI..."}
+              {explanation || "Fetching detailed analysis from Cohere AI..."}
             </div>
             
             {/* ACTION FOOTER */}
@@ -154,8 +107,8 @@ export default function DetectionPage() {
               </button>
             </div>
           </div>
+
         </div>
->>>>>>> 2d54265 (feat: integrated Roboflow detection and Cohere intelligence reports)
       </section>
     </div>
   );

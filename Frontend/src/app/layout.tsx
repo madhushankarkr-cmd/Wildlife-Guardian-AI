@@ -9,9 +9,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 text-gray-800">
+      {/* Changed bg to slate-50 for a more professional 'app' look */}
+      <body className="bg-slate-50 text-gray-900 min-h-screen">
         <Navbar />
-        <main className="max-w-7xl mx-auto px-6 py-10">
+        {/* REMOVED max-w-7xl and px-6 from here. 
+            Now pages can decide their own width. 
+        */}
+        <main>
           {children}
         </main>
       </body>
