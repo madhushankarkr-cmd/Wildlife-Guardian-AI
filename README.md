@@ -60,27 +60,7 @@ This allows researchers, conservation groups, and citizens to **quickly understa
 
 Wildlife risk is calculated using two factors:
 
-**Base Risk (Species Status – IUCN Red List)**
 
-| Status | Base Risk |
-|------|------|
-| Critically Endangered (CR) | 95 |
-| Endangered (EN) | 85 |
-| Vulnerable (VU) | 70 |
-
-**Threat Weights**
-
-| Threat | Weight |
-|------|------|
-| Poaching | +25 |
-| Plastic Pollution | +20 |
-| Habitat Loss | +18 |
-| Climate Change | +20 |
-| Human Encroachment | +15 |
-
-Final Score:
-
-Wildlife Risk Score = Base Risk + Threat Weight (Max 100)
 
 ---
 
